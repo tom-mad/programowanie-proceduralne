@@ -1,0 +1,73 @@
+Mamy dwie procedury wypisujące tablice jednowymiarowe :
+
+Tablica double
+
+void wypisz_d (double *poczatek, double *koniec) { 
+  while (poczatek < koniec) 
+    printf ("%6.2f", *poczatek++); 
+  printf ("\n");    
+  return;}
+
+Tablica int
+
+void wypisz_i (int *poczatek, int *koniec) { 
+  while (poczatek < koniec) 
+    printf ("%4d", *poczatek++);   
+  printf ("\n");    
+  return;}
+Oraz funkcję liczącą sumę elementów w tablicy:
+
+int suma (int *tab, int len) { 
+  int ss = 0;
+  for (i = 0; i < len; i++)  
+    ss+= tab[i]; 
+ return ss;}
+1. ( 0.5 ) W funkcji main proszę utworzyć dwuwymiarową tablicę liczb całkowitych abc o rozmiarze [5][5], i zainicjować ją wartościami z przedziału od -10 do 10.
+
+Tablicę proszę wypisać wierszami procedurą wypisz_i.
+
+( 1 ) Wykorzystując funkcję suma, proszę policzyć sumę z poszczególnych wierszy tablicy abc.
+
+Wyliczone wartości należy zapisać do tablicy suma_abc, która jest zadeklarowana w funkcji main.
+
+Tablicę suma_abc proszę wypisać procedurą wypisz_i.
+
+( 0.5 ) Wykorzystując funkcję suma, proszę używając identyfikatora abc, policzyć sumę z całej tablicy abc. int suma_all = suma (..............., sizeof............/sizeof.........);
+
+( 2 ) Wykorzystując funkcję suma, proszę policzyć sumę z poszczególnych kolumn tablicy abc (tablica transponowana, funkcja swap(int*, int*) , proszę nie używać operatora &) - proszę sprawdzić czy suma_po_kolumnach = suma_all.
+
+( 1 ) Proszę wypisać elementy na przekątnej (od elementu [0][0]) oraz pod przekątną
+
+2. Mamy zdefiniowane cztery tablice:
+
+
+double T_1[4] = {1.0,3.0, 2.0,1.5};
+double T_2[4] = {1.8, 2.0, 1.2, 3.8};
+double T_3[4] = {5.6, 1.0, 3.3, 3.3};
+double T_4[4] = {1.1, 2.1, -6.5, 1.7};
+double T_5[4] = {6.7, 7.8, 9.1, 1.0};
+( 1 ) Proszę utworzyć tablicę TAB[5] tak, aby możliwe było "podpięcie" tablic T_x pod kolejne elementy tablicy TAB zgodnie z rysunkiem:
+
+tablice
+
+Proszę wypisać zawartość tablic
+
+
+    for (i = 0; i<sizeof......./sizeof......; i++){
+       for (j = 0; j<4; j++)
+	    printf("%.2f", TAB[...][...]);
+        printf ("\n");
+    }	
+( 1 ) Proszę zdefiniować wskaźnik TABLICA tak, aby można było zapisać : TABLICA = TAB i wypisać wierszami zawartość tablic T_x procedurą wypisz_d, wykorzystując wskaźnik TABLICA
+( 1 ) Proszę napisać funkcję liczącą sumę wartości liczb zapisanych w wybranej tablicy T_x - dostęp do tablicy ma być zrealizowany przy użyciu wskaźnika TAB . Wywołanie funkcji powinno wyglądać następująco suma (TAB, numer_tablicy, długosc_tablicy) .
+( 2 ) Proszę napisać funkcję zwracającą wskaźnik do tablicy, która ma najmniejszą sumę elementów - należy skorzystać z funkcji z poprzedniego punktu - wywołanie find_tab(TAB, 5).
+Proszę wypisać znaleziony wiersz procedurą wypisz_d
+( 2 ) Proszę napisać odpowiednią procedurę swap_new oraz zmienić funkcję find_tab ( na find_tab_1) tak aby wykorzystując find_tab_1 oraz swap_new można by  posortować tablicę TAB ze względu na sumę "podpiętej" tablicy.
+
+3. ( 1 ) Proszę zadeklarować dwie tablice liczb rzeczywistych A_1[8][6] oraz A_2[10][6].
+Następnie proszę napisać procedurę wypelnij(..........., ...........) wypełniającą tablicę dwuwymiarową liczbami rzeczywistymi od dowolnej wartości z krokiem 0.4, tak, aby wywołanie procedury dla naszych tablic wyglądało następująco :
+
+tablica A_1 wywołanie wypelnij (A_1, 8); wypełnienie tablicy A_1
+tablica A_2 wywołanie wypelnij (A_2, 10); wypełnienie tablicy A_2
+
+Potem proszę wypisać obie tablice procedurą wypisz_d
