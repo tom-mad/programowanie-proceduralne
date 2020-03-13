@@ -1,0 +1,57 @@
+1.( 3 ) Proszę dokończyć program nie używając operatora nawiasowego
+
+
+    #include <stdio.h>
+    #define N ...........
+
+    .........suma(.........., ..............);
+
+    int main(void){
+
+	 
+//deklaracja tablicy 10 liczb całkowitych, użyj N
+//deklaracja wskaźnika p do liczby całkowitej, użyj NULL
+//nie używaj zmiennej int  do indeksowania tablicy
+//przypisz kolejnym elementom tablicy liczby pseudolosowe z przedziału od 7 do 35 i wypisz je na ekran 
+
+    for(...=tab; .... <... + ..... ; ....++){
+       ....=rand()......;  // nie korzystaj z tab 
+		
+//oblicz wartość indeksu kolejnych elementów tablicy, wypisz wartości kolejnych elementów używając p
+
+
+       printf("p[%d] = %d\n", .............., ...............);
+}
+
+printf("\n");
+
+ 
+//oblicz rekurencyjnie sumę elementów tablicy.
+
+    int su = suma(............., ..............);   //nie używaj N
+    
+    printf("su=%d\n",su);
+    return 0;
+    }
+
+ //funkcja rekurencyjna liczaca sume elementów tablicy  
+    ..... suma (const ......, const ......){   //nie używaj N 
+      if (.........................)
+   return ....... + ................;
+     else
+   return .....................;
+    }
+
+2.( 2 ) Proszę napisać i przetestować funkcję zamieniającą kolejność elementów tablicy znaków w taki sposób by duże litery znalazły się na początku, a małe na końcu tablicy.
+
+
+3. Proszę napisać oraz przetestować procedurę ..... zamiana(..., ....) , która zamieni wartości przekazanych jej argumentów.
+
+( 1 ) W funkcji main(), utwórz dwie zmienne i zamień ich wartości przy użyciu procedury zamiana().
+( 1 ) Napisz procedurę ..... odwroc(..., ....) przeznaczoną do odwrócenia jednowymiarowej tablicy. Zastosuj w niej procedurę zamiana().
+( 1 ) Napisz procedurę ..... wymien_tablice(......., ........, ......) do wymiany zawartości dwóch jednowymiarowych tablic. Zastosuj w niej procedurę zamiana().
+
+4. ( 2 ) Proszę napisać funkcję, która będzie zwracać w wyniku sumę elementów tablicy t[n] liczb zmiennopozycyjnych, oraz pozwoli wypisać w funkcji main() wartość minimalną i maksymalną, wartość średnią jej elementów, maksymalne i minimalne odchylenie od wartości średniej.
+Prototyp funkcji float suma (float *t, int n, ????); lub float suma (float t[], int n, ????);.
+
+Zadanie proszę wykonać w wersji wskaźnikowej i indeksowej
