@@ -4,14 +4,13 @@
 int main()
 {	
 	int a;
-	int *pas;
+	int *pas = NULL;
 	printf("Podaj Wysokość Trójkąta Pascala: ");
 	scanf("%d",&a);
-	pas = malloc(sizeof(int)*1);
-	*pas = 1; 
 	for(int i=1;i<=a;i++)
 	{
-		pas = realloc(pas, i*sizeof(int));
+		pas = (int*)realloc(pas, i*sizeof(int));
+		*pas = 1;
 		*(pas+i-1)=1;
 		if(i>2)
 		{
