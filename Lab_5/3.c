@@ -1,6 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
 void print_tab(int a[][4], int x);
 void wypisz_i (int *poczatek, int *koniec);
 int ** mn_tab_1(int A[][3],int B[][4],int n);
@@ -8,14 +7,27 @@ int main()
 {
 	int t_A [2][3] = {1,2,3,4,5,6};
 	int t_B [3][4] = {1,1,1,1,1,1,1,1,1,1,1,1};
-	int ** t_C = mn_tab_1 (t_A, t_B, 2);
+	int (*t_C)[4] = mn_tab_1 (t_A, t_B, 2);
 	return 0;
 	
 }
 int ** mn_tab_1(int A[][3],int B[][4],int n)
 {
-	printf("%ld\t%ld",sizeof(A[3])/sizeof(int),sizeof(B[4])/sizeof(int));
-	return NULL;
+	int (* C)[4] = calloc(n,sizeof(*C));
+	int a=0,b=0;
+	while(a!=2)
+	{
+		*(*(C+a)+b) = ;
+		b++;
+		if(b==4)
+		{
+			a++;
+			b=0;
+		}
+	}
+	printf("%ld\t",sizeof(C));
+
+	return C; 
 }
 void wypisz_i (int *poczatek, int *koniec) 
 {
@@ -35,3 +47,4 @@ void print_tab(int a[][4], int x)
 	}
 return;
 }
+int ** mn_tab_1(int A[][3],int B[][4],int n);

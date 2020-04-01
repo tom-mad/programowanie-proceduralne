@@ -11,7 +11,7 @@ int main()
 	double T_3[4] = {5.6, 1.0, 3.3, 3.3};
 	double T_4[4] = {1.1, 2.1, -6.5, 1.7};
 	double T_5[4] = {6.7, 7.8, 9.1, 1.0};
-	double * TAB[5]={T_1,T_2,T_3,T_4,T_5}; 
+	double * TAB[5]={T_1,T_2,T_3,T_4,T_5};
 	printf ("Pierwsze Wypisanie:\n");
   for (int i = 0; i<sizeof(TAB)/sizeof(double*); i++)
   {
