@@ -1,50 +1,36 @@
 #include<stdio.h>
 #include<stdlib.h>
-void print_tab(int a[][4], int x);
-void wypisz_i (int *poczatek, int *koniec);
-int ** mn_tab_1(int A[][3],int B[][4],int n);
-int main()
-{
-	int t_A [2][3] = {1,2,3,4,5,6};
-	int t_B [3][4] = {1,1,1,1,1,1,1,1,1,1,1,1};
-	int (*t_C)[4] = mn_tab_1 (t_A, t_B, 2);
-	return 0;
-	
+void print_tab(int **a,int rows, int columns);
+int **mn_tab_1(int p, int columns, int rows, int(*A)[p], int(*B)[columns]) ;
+int main(){
+    int t_A [2][3] = {1,2,3,4,5,6};
+    int t_B [3][4] = {1,1,1,1,2,1,1,4,1,1,1,1};
+    int ** t_C = mn_tab_1 (3,4, 2,t_A,t_B);
+    print_tab(t_C,2,4);
+    free(t_C);
+    return 0;
 }
-int ** mn_tab_1(int A[][3],int B[][4],int n)
-{
-	int (* C)[4] = calloc(n,sizeof(*C));
-	int a=0,b=0;
-	while(a!=2)
-	{
-		*(*(C+a)+b) = ;
-		b++;
-		if(b==4)
-		{
-			a++;
-			b=0;
-		}
-	}
-	printf("%ld\t",sizeof(C));
-
-	return C; 
+int **mn_tab_1(int p, int columns, int rows, int(*A)[p], int(*B)[columns]) {
+	int ** array = (int**)calloc(rows,sizeof(int*));
+	*array = (int*)calloc(rows*columns,sizeof(int));
+	for(int i = 1;i<rows;i++)
+		*(array + i) = i*columns+*array;
+    for(int i=0; i<rows; i++){
+        for(int j=0; j<columns; j++){
+            for(int k=0; k<p; k++){
+                array[i][j]+=A[i][k]*B[k][j];
+            }
+        }
+    }
+    return array;
 }
-void wypisz_i (int *poczatek, int *koniec) 
-{
-	while (poczatek <= koniec)
-		printf ("%4d", *poczatek++);
-	printf ("\n");
-	return;
-}
-void print_tab(int a[][4], int x)
-{
+void print_tab(int **a,int rows, int columns){
 	int i, j;
-	for (i = 0; i < x; i++)
+	for (i = 0; i < rows; i++)
 	{
-		for (j = 0; j < 4; j++)
+		for (j = 0; j < columns; j++)
 			printf ("%3d", a[i][j]);
 		printf ("\n");
 	}
 return;
 }
-int ** mn_tab_1(int A[][3],int B[][4],int n);
