@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 void wypisz_f (float **matrix,int rows,int columns){
     puts("-----------------------------------\nWypisanie Macierzy:");
     for(int i = 0  ; i < rows ; i++){
@@ -39,16 +40,20 @@ int main(){
     int i,x,y;
     
     srand(time(0));
+    
     FILE *f_1 = fopen ("dane_1.dat","wb");
     int var;
     printf ("rozmiar = ");
     scanf ("%d", &var);
+    
     for (i=0; i<var; i++)
         tab[i]=rand_f(0.0, 40.0);
     fwrite (tab,sizeof(float),var, f_1);
     fclose(f_1);
+    
     f_1 = fopen ("dane_1.dat","rb");
-    x = 3,y = 10;
+    
+	x = 3,y = 10;
     float ** mat = matrix(x,y,f_1);
     wypisz_f(mat,x,y);
     free(mat);
@@ -58,5 +63,6 @@ int main(){
     wypisz_f(mat,x,y);
     free(mat);
     fclose(f_1);
+    
     return 0;
 } 

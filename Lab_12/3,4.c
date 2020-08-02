@@ -35,14 +35,17 @@ void vision(struct tnode* view){
   	}
 }
 
-void break_the_chain(struct tnode* head){
+void break_the_chain(struct tnode** head)
+{
   	
-  	struct tnode* chain = head;
-  	while(chain){
-    	head = chain->next;
+  	struct tnode* chain = *head;
+  	while(chain)
+    {
+    	*head = chain->next;
     	free(chain);
-    	chain = head; 
+    	chain = *head; 
   	}
+    *head = NULL;
 }
 
 
@@ -54,13 +57,13 @@ int main(){
   	dodaj_na_poczatek(&head,'a');
   	dodaj_na_poczatek(&head,'c');
   	dodaj_na_poczatek(&head,'v');
- 	dodaj_na_poczatek(&head,'f');
+ 	  dodaj_na_poczatek(&head,'f');
   	dodaj_na_poczatek(&head,'t');
   	dodaj_na_koniec(&head,'i');
   
   	vision(head);
 
-  	break_the_chain(head);
+  	break_the_chain(&head);
 
 	return 0;
 }
